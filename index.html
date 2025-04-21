@@ -30,6 +30,7 @@
             box-shadow: 0 4px 8px rgba(0,0,0,0.1);
             margin: 1rem 0;
             padding: 1rem;
+            position: relative;
         }
         .card h2 {
             margin-top: 0;
@@ -43,11 +44,33 @@
         .card p {
             margin: 0.2rem 0;
         }
+        .image-container {
+            margin-top: 1rem;
+            display: none;
+        }
+        .image-container img {
+            max-width: 100%;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+        }
+        .toggle-btn {
+            cursor: pointer;
+            color: #1b4d3e;
+            display: inline-block;
+            margin-top: 0.5rem;
+            font-size: 0.95em;
+        }
     </style>
+    <script>
+        function toggleImage(id) {
+            const el = document.getElementById(id);
+            el.style.display = el.style.display === 'none' ? 'block' : 'none';
+        }
+    </script>
 </head>
 <body>
     <header>
-<img src="logo.png" alt="Logo Wydziału" width="150" />
+        <img src="logo.png" alt="Logo Wydziału" width="150" />
         <h1>Pomniki Przyrody</h1>
     </header>
     <div class="container">
@@ -56,9 +79,12 @@
             <h2>Dąb szypułkowy</h2>
             <p>Leśnictwo: Bielice</p>
             <p>Współrzędne: 53.101902,18.064275</p>
-            <p>Wysokość: 20 m</p>
-            <p>Uwagi: Dziuplasty, rozkład drewna w części odziomkowej</p>
+            <p>Wysokość: 20 m</p><p>Uwagi: Dziuplasty, rozkład drewna w części odziomkowej</p>
             <a href="https://maps.google.com/?q=53.101902,18.064275" target="_blank">Zobacz w Google Maps</a>
+            <div class="toggle-btn" onclick="toggleImage('img1')">Pokaż/Ukryj zdjęcie</div>
+            <div class="image-container" id="img1">
+                <img src="1.png" alt="Zdjęcie drzewa 1" />
+            </div>
         </div>
     
         <div class="card">
@@ -66,17 +92,23 @@
             <p>Leśnictwo: Bielice</p>
             <p>Współrzędne: 53.070640,18.003580</p>
             <p>Wysokość: -</p>
-            
             <a href="https://maps.google.com/?q=53.070640,18.003580" target="_blank">Zobacz w Google Maps</a>
+            <div class="toggle-btn" onclick="toggleImage('img2')">Pokaż/Ukryj zdjęcie</div>
+            <div class="image-container" id="img2">
+                <img src="2.png" alt="Zdjęcie drzewa 2" />
+            </div>
         </div>
     
         <div class="card">
             <h2>Dąb szypułkowy</h2>
             <p>Leśnictwo: Smolno</p>
             <p>Współrzędne: 53.022644,18.003437</p>
-            <p>Wysokość: 6 m</p>
-            <p>Uwagi: Dąb złamany na wysokości 6m</p>
+            <p>Wysokość: 6 m</p><p>Uwagi: Dąb złamany na wysokości 6m</p>
             <a href="https://maps.google.com/?q=53.022644,18.003437" target="_blank">Zobacz w Google Maps</a>
+            <div class="toggle-btn" onclick="toggleImage('img3')">Pokaż/Ukryj zdjęcie</div>
+            <div class="image-container" id="img3">
+                <img src="3.png" alt="Zdjęcie drzewa 3" />
+            </div>
         </div>
     
         <div class="card">
@@ -84,8 +116,11 @@
             <p>Leśnictwo: Łochowo</p>
             <p>Współrzędne: 53.112094,17.818392</p>
             <p>Wysokość: 25 m</p>
-            
             <a href="https://maps.google.com/?q=53.112094,17.818392" target="_blank">Zobacz w Google Maps</a>
+            <div class="toggle-btn" onclick="toggleImage('img4')">Pokaż/Ukryj zdjęcie</div>
+            <div class="image-container" id="img4">
+                <img src="4.png" alt="Zdjęcie drzewa 4" />
+            </div>
         </div>
     
         <div class="card">
@@ -93,8 +128,11 @@
             <p>Leśnictwo: Lipniki</p>
             <p>Współrzędne: 53.097741,17.888603</p>
             <p>Wysokość: 20 m</p>
-            
             <a href="https://maps.google.com/?q=53.097741,17.888603" target="_blank">Zobacz w Google Maps</a>
+            <div class="toggle-btn" onclick="toggleImage('img5')">Pokaż/Ukryj zdjęcie</div>
+            <div class="image-container" id="img5">
+                <img src="5.png" alt="Zdjęcie drzewa 5" />
+            </div>
         </div>
     
         <div class="card">
@@ -102,8 +140,11 @@
             <p>Leśnictwo: Lipniki</p>
             <p>Współrzędne: 53.096561,17.886214</p>
             <p>Wysokość: 21 m</p>
-            
             <a href="https://maps.google.com/?q=53.096561,17.886214" target="_blank">Zobacz w Google Maps</a>
+            <div class="toggle-btn" onclick="toggleImage('img6')">Pokaż/Ukryj zdjęcie</div>
+            <div class="image-container" id="img6">
+                <img src="6.png" alt="Zdjęcie drzewa 6" />
+            </div>
         </div>
     
         <div class="card">
@@ -111,8 +152,11 @@
             <p>Leśnictwo: Lipniki</p>
             <p>Współrzędne: 53.096561,17.886214</p>
             <p>Wysokość: 24 m</p>
-            
             <a href="https://maps.google.com/?q=53.096561,17.886214" target="_blank">Zobacz w Google Maps</a>
+            <div class="toggle-btn" onclick="toggleImage('img7')">Pokaż/Ukryj zdjęcie</div>
+            <div class="image-container" id="img7">
+                <img src="7.png" alt="Zdjęcie drzewa 7" />
+            </div>
         </div>
     
         <div class="card">
@@ -120,8 +164,11 @@
             <p>Leśnictwo: Lipniki</p>
             <p>Współrzędne: 53.096701,17.886133</p>
             <p>Wysokość: 23 m</p>
-            
             <a href="https://maps.google.com/?q=53.096701,17.886133" target="_blank">Zobacz w Google Maps</a>
+            <div class="toggle-btn" onclick="toggleImage('img8')">Pokaż/Ukryj zdjęcie</div>
+            <div class="image-container" id="img8">
+                <img src="8.png" alt="Zdjęcie drzewa 8" />
+            </div>
         </div>
     
         <div class="card">
@@ -129,26 +176,35 @@
             <p>Leśnictwo: Potulice</p>
             <p>Współrzędne: 53.122867,17.682305</p>
             <p>Wysokość: 27 m</p>
-            
             <a href="https://maps.google.com/?q=53.122867,17.682305" target="_blank">Zobacz w Google Maps</a>
+            <div class="toggle-btn" onclick="toggleImage('img9')">Pokaż/Ukryj zdjęcie</div>
+            <div class="image-container" id="img9">
+                <img src="9.png" alt="Zdjęcie drzewa 9" />
+            </div>
         </div>
     
         <div class="card">
             <h2>Dąb bezszypułkowy 17 szt.</h2>
             <p>Leśnictwo: Potulice</p>
             <p>Współrzędne: 53.126341,17.677274</p>
-            <p>Wysokość: 15-20 m</p>
-            <p>Uwagi: 7 suchych, w tym 3 wywroty</p>
+            <p>Wysokość: 15-20 m</p><p>Uwagi: 7 suchych, w tym 3 wywroty</p>
             <a href="https://maps.google.com/?q=53.126341,17.677274" target="_blank">Zobacz w Google Maps</a>
+            <div class="toggle-btn" onclick="toggleImage('img10')">Pokaż/Ukryj zdjęcie</div>
+            <div class="image-container" id="img10">
+                <img src="10.png" alt="Zdjęcie drzewa 10" />
+            </div>
         </div>
     
         <div class="card">
             <h2>Dąb bezszypułkowy 15 szt.</h2>
             <p>Leśnictwo: Potulice</p>
             <p>Współrzędne: 53.126341,17.677274</p>
-            <p>Wysokość: 11-23 m</p>
-            <p>Uwagi: 1 suchy</p>
+            <p>Wysokość: 11-23 m</p><p>Uwagi: 1 suchy</p>
             <a href="https://maps.google.com/?q=53.126341,17.677274" target="_blank">Zobacz w Google Maps</a>
+            <div class="toggle-btn" onclick="toggleImage('img11')">Pokaż/Ukryj zdjęcie</div>
+            <div class="image-container" id="img11">
+                <img src="11.png" alt="Zdjęcie drzewa 11" />
+            </div>
         </div>
     
     </div>
